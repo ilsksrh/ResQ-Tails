@@ -1,0 +1,100 @@
+
+POST http://localhost:8080/api/auth/signup 
+POST http://localhost:8080/api/auth/signin
+GET http://localhost:8080/api/test/(all/user/mod/admin)
+{ 
+    "username": "Sarco", 
+    "email": "Sarco@narxoz.kz", 
+    "password": "Sara1234!",
+    "confirmPassword": "Sara1234!",
+    "role": ["mod", "user"] 
+}
+
+
+Animals
+POST http://localhost:8080/api/animals - to create animal
+{ 
+    "name": "Nurik", 
+    "speciees": "dog", 
+    "breed": "ovcharka",
+    "gender": "female",
+    "status": "patient"
+}
+
+GET http://localhost:8080/api/animals - to get all animals
+PUT http://localhost:8080/api/animals/{id} - to change data of the animal by {id}
+DELETE http://localhost:8080/api/animals/{id} - to delete animal by id
+
+Posts
+POST http://localhost:8080/api/posts
+{
+    "title": "How to take care after cats",
+    "userId": 123,
+    "photo": "https://example.com/photo.jpg",
+    "description": "Cats are very cute",
+    "status": "published",
+    "type": "post"
+}
+
+
+GET http://localhost:8080/api/posts
+DELETE http://localhost:8080/api/posts/{id}
+PUT http://localhost:8080/api/posts/{id}
+
+
+2MB max size
+
+POST http://localhost:8080/upload
+GET http://localhost:8080/files
+
+
+ЮЗЕРЫЫ
+user профиль
+PUT http://localhost:8080/api/users/profile
+{
+  "firstName": "2024-05-25",
+  "lastName": "Test plan",
+  "avatar": "URL PHOTO",
+  "phone": "87072002004"
+}
+
+For Moderator
+GET http://localhost:8080/api/users/all  -- получить инфу всех юзеров
+DELETE http://localhost:8080/api/users/{username}  - удалить юзера
+
+Categories
+POST http://localhost:8080/api/categories
+{
+    "name": "cookies"
+}
+GET http://localhost:8080/api/categories
+DELETE http://localhost:8080/api/categories/${categoryId}
+
+
+
+MANY TO MANY TAGS
+
+GET http://localhost:8080/api/tags - to get all tags +++++
+
+GET http://localhost:8080/api/posts/{postId}/tags - all tags of the post ++++
+
+GET http://localhost:8080/api/tags/{id} - get tag by id 
+
+GET http://localhost:8080/api/tags/{tagId}/posts - Get All Posts by Tag ID +++++++
+
+POST http://localhost:8080/api/posts/{postId}/tags - add tag to post 
+
+PUT http://localhost:8080/api/tags/{id} - update tag ++++++
+
+DELETE http://localhost:8080/api/posts/{postId}/tags/{tagId} - delete tag from post  +++++++
+
+DELETE http://localhost:8080/api/tags/{id} - delete tag 
+
+POST http://localhost:8080/api/posts/{post_id}/tags/{tag_id} - to add existing tag
+
+
+GET http://localhost:8080/api/byTags?tagIds=10,2
+
+
+POST http://localhost:8080/api/tags - create tag
+
